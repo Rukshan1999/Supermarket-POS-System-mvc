@@ -4,13 +4,15 @@
  */
 package supermarketsystem.mvc;
 
+import supermarketsystem.mvc.view.CustomerView;
+
 
 public class SupermarketSystemMvc {
 
   
     public static void main(String[] args) {
-        System.out.println("Hello");
         
+        new CustomerView().setVisible(true);
     }
     
 }

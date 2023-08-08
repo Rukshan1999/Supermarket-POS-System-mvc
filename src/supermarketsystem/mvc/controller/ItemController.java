@@ -48,7 +48,7 @@ public class ItemController {
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         
         preparedStatement.setString(1, item.getItemCode());
-        preparedStatement.setString(2, item.getDiscription());
+        preparedStatement.setString(2, item.getDescription());
         preparedStatement.setString(3, item.getPackSize());
         preparedStatement.setDouble(4, item.getUnitPrice());
         preparedStatement.setInt(5, item.getQoh());
@@ -83,5 +83,47 @@ public class ItemController {
         }
         return null;
     }
+
+    public String updateItem(ItemModel item) throws SQLException {
+        
+        
+            Connection connection = DBConnection.getInstanc().getConnection();
+            String query = "UPDATE Item SET Description=?, PackSize=?, UnitPrice=?, QtyOnHand=? WHERE ItemCode=?";
+
+           PreparedStatement statement = connection.prepareStatement(query);
+
+           statement.setString(5, item.getItemCode());
+           statement.setString(1, item.getDescription());
+           statement.setString(2, item.getPackSize());
+           statement.setDouble(3, item.getUnitPrice());
+           statement.setInt(4, item.getQoh());
+
+           if(statement.executeUpdate() > 0){
+               return "Sucess";
+           }else{
+               return "Fail";
+           }  
+    }
+
+    public String deleteItem(String itemCode) throws SQLException {
+        
+        Connection connection = DBConnection.getInstanc().getConnection();
+        String query = "DELETE FROM item WHERE ItemCode=?";
+        
+        PreparedStatement statement = connection.prepareStatement(query);
+        
+        statement.setString(1,itemCode);
+         
+          if(statement.executeUpdate() > 0){
+            return "Sucess";
+        }else{
+            return "Fail";
+        }
+
+    }
+
+   
+
+ 
     
 }

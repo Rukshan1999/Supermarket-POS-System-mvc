@@ -11,7 +11,7 @@ package supermarketsystem.mvc.model;
 public class ItemModel {
     
     private String itemCode;
-    private String discription;
+    private String description;
     private String packSize;
     private Double unitPrice;
     private Integer qoh;
@@ -19,9 +19,9 @@ public class ItemModel {
     public ItemModel() {
     }
 
-    public ItemModel(String itemCode, String discription, String packSize, Double unitPrice, Integer qoh) {
+    public ItemModel(String itemCode, String description, String packSize, Double unitPrice, Integer qoh) {
         this.itemCode = itemCode;
-        this.discription = discription;
+        this.description = description;
         this.packSize = packSize;
         this.unitPrice = unitPrice;
         this.qoh = qoh;
@@ -42,17 +42,17 @@ public class ItemModel {
     }
 
     /**
-     * @return the discription
+     * @return the description
      */
-    public String getDiscription() {
-        return discription;
+    public String getDescription() {
+        return description;
     }
 
     /**
-     * @param discription the discription to set
+     * @param description the description to set
      */
-    public void setDiscription(String discription) {
-        this.discription = discription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
@@ -99,7 +99,7 @@ public class ItemModel {
 
     @Override
     public String toString() {
-        return "ItemModel{" + "itemCode=" + itemCode + ", discription=" + discription + ", packSize=" + packSize + ", unitPrice=" + unitPrice + ", qoh=" + qoh + '}';
+        return "ItemModel{" + "itemCode=" + itemCode + ", description=" + description + ", packSize=" + packSize + ", unitPrice=" + unitPrice + ", qoh=" + qoh + '}';
     }
     
     
